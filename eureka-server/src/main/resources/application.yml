@@ -1,0 +1,21 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  client:
+    # El propio servidor no se registra ni se descubre a sí mismo
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    # Desactiva el modo de auto-preservación en desarrollo
+    enable-self-preservation: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

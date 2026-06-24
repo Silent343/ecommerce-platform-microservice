@@ -1,0 +1,16 @@
+package com.ecommerce.payment.interfaces.rest.request;
+
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+
+import java.math.BigDecimal;
+import java.util.UUID;
+
+public record ProcessPaymentRequest(
+        @NotNull UUID orderId,
+        @NotNull UUID customerId,
+        @NotNull @Positive BigDecimal amount,
+        String currency,
+        String method
+) {
+}
